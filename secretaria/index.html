@@ -197,7 +197,7 @@
         if (mapDependancyLabels) {
             for (var i = 0; i < mapDependancyLabels.length; i++) {
                 var label = mapDependancyLabels[i];
-                var obj = document.forms['zsWebToCase_1084830000000328001'][label];
+                var obj = document.forms['zsWebToCase_1084830000000328019'][label];
                 if (obj) {
                     setDependent(obj, true);
                 }
@@ -238,7 +238,7 @@
                     if (label.indexOf(".") > -1) {
                         label = label.replace(/\./g, '___');
                     }
-                    var depObj = document.forms['zsWebToCase_1084830000000328001'][label];
+                    var depObj = document.forms['zsWebToCase_1084830000000328019'][label];
                     if (depObj && depObj.options) {
                         var mapValues = "";
                         var selected_val = depObj.value;
@@ -403,8 +403,8 @@
             }
         };
     }();
-    var zsWebFormMandatoryFields = new Array("First Name", "Contact Name", "Phone", "Email", "Subject", "Description");
-    var zsFieldsDisplayLabelArray = new Array("Nome", "Sobrenome", "Whatsapp", "E-mail", "Assunto", "Descrição");
+    var zsWebFormMandatoryFields = new Array("First Name", "Contact Name", "Phone", "Email", "Subject");
+    var zsFieldsDisplayLabelArray = new Array("Nome", "Sobrenome", "Whatsapp", "E-mail", "Assunto");
 
     function zsValidateMandatoryFields() {
         var name = '';
@@ -412,7 +412,7 @@
         var isError = 0;
         for (var index = 0; index < zsWebFormMandatoryFields.length; index++) {
             isError = 0;
-            var fieldObject = document.forms['zsWebToCase_1084830000000328001'][zsWebFormMandatoryFields[index]];
+            var fieldObject = document.forms['zsWebToCase_1084830000000328019'][zsWebFormMandatoryFields[index]];
             if (fieldObject) {
                 if (((fieldObject.value).replace(/^\s+|\s+$/g, '')).length == 0) {
                     alert(zsFieldsDisplayLabelArray[index] + ' não pode ficar em branco ');
@@ -448,7 +448,7 @@
             }
         }
         if (isError == 0) {
-            document.getElementById('zsSubmitButton_1084830000000328001').setAttribute('disabled', 'disabled');
+            document.getElementById('zsSubmitButton_1084830000000328019').setAttribute('disabled', 'disabled');
         }
     }
 
@@ -660,7 +660,7 @@
             zsRegenerateCaptcha();
         }
         setAllDependancyFieldsMapping();
-        document.getElementById('zsSubmitButton_1084830000000328001').removeAttribute('disabled');
+        document.getElementById('zsSubmitButton_1084830000000328019').removeAttribute('disabled');
         zsAttachedAttachmentsCount = 0;
         zsAttachmentFileBrowserIdsList = [1, 2, 3, 4, 5];
         jQuery('#zsFileBrowseAttachments').html('');
@@ -678,8 +678,8 @@
                 zsAttachmentFileBrowserIdsList.splice(zsAttachmentIdToBeRemoved, 1);
             }
         });
-        if (document.forms['zsWebToCase_1084830000000328001']['zsCloudPickerAttachments'] != undefined) {
-            var zsCloudAttachments = jQuery.parseJSON(document.forms['zsWebToCase_1084830000000328001']['zsCloudPickerAttachments'].value);
+        if (document.forms['zsWebToCase_1084830000000328019']['zsCloudPickerAttachments'] != undefined) {
+            var zsCloudAttachments = jQuery.parseJSON(document.forms['zsWebToCase_1084830000000328019']['zsCloudPickerAttachments'].value);
             zsRenderCloudAttachments(zsCloudAttachments);
         }
         zsRearrangeFileBrowseAttachments();
@@ -688,26 +688,26 @@
 
     function zsResetWebForm(webFormId) {
         document.forms['zsWebToCase_' + webFormId].reset();
-        document.getElementById('zsSubmitButton_1084830000000328001').removeAttribute('disabled');
+        document.getElementById('zsSubmitButton_1084830000000328019').removeAttribute('disabled');
         setAllDependancyFieldsMapping();
         zsAttachedAttachmentsCount = 0;
         zsAttachmentFileBrowserIdsList = [1, 2, 3, 4, 5];
         jQuery('#zsFileBrowseAttachments').html('');
         zsCloudPickerJSON = {};
-        if (document.forms['zsWebToCase_1084830000000328001']['zsCloudPickerAttachments'] != undefined) {
-            document.forms['zsWebToCase_1084830000000328001']['zsCloudPickerAttachments'].value = JSON.stringify({});
+        if (document.forms['zsWebToCase_1084830000000328019']['zsCloudPickerAttachments'] != undefined) {
+            document.forms['zsWebToCase_1084830000000328019']['zsCloudPickerAttachments'].value = JSON.stringify({});
         }
         zsRearrangeFileBrowseAttachments();
         zsChangeMousePointer();
     } </script>
 </head>
 <div id='zohoSupportWebToCase' align='center'>
-    <form name='zsWebToCase_1084830000000328001' id='zsWebToCase_1084830000000328001'
+    <form name='zsWebToCase_1084830000000328019' id='zsWebToCase_1084830000000328019'
           action='https://desk.zoho.com/support/WebToCase' method='POST' onSubmit='return zsValidateMandatoryFields()'
           enctype='multipart/form-data'><input type='hidden' name='xnQsjsdp'
                                                value='edbsn55e9fcdc625c7c30a57819ed1e3f489e'/> <input type='hidden'
                                                                                                       name='xmIwtLD'
-                                                                                                      value='edbsn06b65c7fd90e33725e3d8a63c1e203f0b1219808e6131aefc01bfc1be8463414'/>
+                                                                                                      value='edbsn06b65c7fd90e33725e3d8a63c1e203f08ecbc0ffd2ba8ecc9d4ffc7321af34fe'/>
         <input type='hidden' name='xJdfEaS' value=''/> <input type='hidden' name='actionType' value='Q2FzZXM='/> <input
                 type="hidden" id="property(module)" value="Cases"/> <input type="hidden"
                                                                            id="dependent_field_values_Cases"
@@ -716,7 +716,8 @@
         <img src="../logohorizontal.png" alt="Logo PV Branca" width="40%" />
         <table border='0' cellspacing='0' class='zsFormClass'>
             <tr>
-                <td colspan='2' class='zsFontClass'><h3 align="center"><strong>Formulário da Manutenção Palavra Viva</strong></h3><h4 align="center">🛠️ · 🚧 · ⚙️ · 🔧 · ⚠️ · 👨🏻‍🔧 · 🛠 · 🚨. 👨‍🔧.</h4></td>
+                <td colspan='2' class='zsFontClass'><h3 align="center"><strong>Formulário de Abertura de Chamado do departamento de
+                    Secretaria</strong></h3><h4 align="center">👩 💻 ✉ 📠 📞 📜 ✒️ 💼</h4></td>
             </tr>
             <br>
             <tr>
@@ -740,56 +741,14 @@
                                                     class='manfieldbdr'/></td>
             </tr>
             <tr>
-                <td nowrap class='zsFontClass ' width='25%' align='left'>Classifica&ccedil;&otilde;es &nbsp;&nbsp;</td>
-                <td align='left' width='75%'><select name='Classification' value='' onchange="setDependent(this, false)"
-                                                     id='Classification'>
-                    <option value=''>-Nenhuma-</option>
-                    <option value='Question'>Dúvida</option>
-                    <option value='Problem'>Problema</option>
-                    <option value='Feature'>Melhoria</option>
-                    <option value='Others'>Outros</option>
-                </select></td>
-            </tr>
-            <tr>
                 <td nowrap class='zsFontClass ' width='25%' align='left'>Assunto&nbsp;&nbsp;</td>
                 <td align='left' width='75%'><input type='text' maxlength='255' name='Subject' value=''
                                                     class='manfieldbdr'/></td>
             </tr>
             <tr>
                 <td nowrap class='zsFontClass ' width='25%' align='left'>Descri&ccedil;&atilde;o &nbsp;&nbsp;</td>
-                <td align='left' width='75%'><textarea name='Description' maxlength='3000' width='250' height='250'
-                                                       class='manfieldbdr'></textarea></td>
-            </tr>
-            <tr>
-                <td nowrap class='zsFontClass ' width='25%' align='left'>Anexo &nbsp;&nbsp;</td>
-                <td align='left' width='75%'><span class="zsFontClass wtcuploadfile" id="zsBrowseAttachment">Anexar arquivos</span><input
-                        class="wtcuploadinput" type='file' name='attachment_1' id='zsattachment_1'
-                        style='display:block;' onclick='zsOpenFileBrowseAttachment(event)'
-                        onchange='zsRenderBrowseFileAttachment(this.value, this)'/><input class="wtcuploadinput"
-                                                                                          type='file'
-                                                                                          name='attachment_2'
-                                                                                          id='zsattachment_2'
-                                                                                          style='display:none;'
-                                                                                          onclick='zsOpenFileBrowseAttachment(event)'
-                                                                                          onchange='zsRenderBrowseFileAttachment(this.value, this)'/>
-                    <input class="wtcuploadinput" type='file' name='attachment_3' id='zsattachment_3'
-                           style='display:none;' onclick='zsOpenFileBrowseAttachment(event)'
-                           onchange='zsRenderBrowseFileAttachment(this.value, this)'/> <input class="wtcuploadinput"
-                                                                                              type='file'
-                                                                                              name='attachment_4'
-                                                                                              id='zsattachment_4'
-                                                                                              style='display:none;'
-                                                                                              onclick='zsOpenFileBrowseAttachment(event)'
-                                                                                              onchange='zsRenderBrowseFileAttachment(this.value, this)'/>
-                    <input class="wtcuploadinput" type='file' name='attachment_5' id='zsattachment_5'
-                           style='display:none;' onclick='zsOpenFileBrowseAttachment(event)'
-                           onchange='zsRenderBrowseFileAttachment(this.value, this)'/>
-                    <div class="clboth"></div>
-                    <span id='zsMaxSizeMessage' style='color:black;font-size: 8px;float: left;'>Cada arquivo pode ter até 20MB de tamanho.</span><span
-                            id='zsMaxLimitMessage'
-                            style='color:black;font-size: 8px;float: left;margin-left: 14px;display: none;'>Você pode anexar um máximo de 5 registros por vez.</span>
-                    <div id='zsFileBrowseAttachments'></div>
-                </td>
+                <td align='left' width='75%'><textarea name='Description' maxlength='3000' width='250'
+                                                       height='250'></textarea></td>
             </tr>
             <tr>
                 <td nowrap class='zsFontClass ' width='25%' align='left'>Prioridade &nbsp;&nbsp;</td>
@@ -885,12 +844,43 @@
                 </select></td>
             </tr>
             <tr>
+                <td nowrap class='zsFontClass ' width='25%' align='left'>Anexo &nbsp;&nbsp;</td>
+                <td align='left' width='75%'><span class="zsFontClass wtcuploadfile" id="zsBrowseAttachment">Anexar arquivos</span><input
+                        class="wtcuploadinput" type='file' name='attachment_1' id='zsattachment_1'
+                        style='display:block;' onclick='zsOpenFileBrowseAttachment(event)'
+                        onchange='zsRenderBrowseFileAttachment(this.value, this)'/><input class="wtcuploadinput"
+                                                                                          type='file'
+                                                                                          name='attachment_2'
+                                                                                          id='zsattachment_2'
+                                                                                          style='display:none;'
+                                                                                          onclick='zsOpenFileBrowseAttachment(event)'
+                                                                                          onchange='zsRenderBrowseFileAttachment(this.value, this)'/>
+                    <input class="wtcuploadinput" type='file' name='attachment_3' id='zsattachment_3'
+                           style='display:none;' onclick='zsOpenFileBrowseAttachment(event)'
+                           onchange='zsRenderBrowseFileAttachment(this.value, this)'/> <input class="wtcuploadinput"
+                                                                                              type='file'
+                                                                                              name='attachment_4'
+                                                                                              id='zsattachment_4'
+                                                                                              style='display:none;'
+                                                                                              onclick='zsOpenFileBrowseAttachment(event)'
+                                                                                              onchange='zsRenderBrowseFileAttachment(this.value, this)'/>
+                    <input class="wtcuploadinput" type='file' name='attachment_5' id='zsattachment_5'
+                           style='display:none;' onclick='zsOpenFileBrowseAttachment(event)'
+                           onchange='zsRenderBrowseFileAttachment(this.value, this)'/>
+                    <div class="clboth"></div>
+                    <span id='zsMaxSizeMessage' style='color:black;font-size: 8px;float: left;'>Cada arquivo pode ter até 20MB de tamanho.</span><span
+                            id='zsMaxLimitMessage'
+                            style='color:black;font-size: 8px;float: left;margin-left: 14px;display: none;'>Você pode anexar um máximo de 5 registros por vez.</span>
+                    <div id='zsFileBrowseAttachments'></div>
+                </td>
+            </tr>
+            <tr>
                 <td style='padding: 11px 5px 0px 5px;' colspan='2' align='center' width='25%'><input type='submit'
-                                                                                                     id="zsSubmitButton_1084830000000328001"
+                                                                                                     id="zsSubmitButton_1084830000000328019"
                                                                                                      class='zsFontClass'
                                                                                                      value='Enviar'>
                     &nbsp; &nbsp; <input type='button' class='zsFontClass' value='Restaurar'
-                                         onclick="zsResetWebForm('1084830000000328001')"></td>
+                                         onclick="zsResetWebForm('1084830000000328019')"></td>
             </tr>
             <tr>
                 <td width='25%' align='left'></td>
